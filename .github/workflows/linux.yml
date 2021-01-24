@@ -30,9 +30,6 @@ jobs:
       - name: Install Gtk,
         run: |
           sudo apt-get update; sudo apt install libgtk-3-dev libasound2-dev librsvg2-dev wget -y
-          command -v gdk-pixbuf-query-loaders
-          ls -l /usr/bin/gdk-pixbuf-query-loaders /usr/lib/x86_64-linux-gnu/gdk-pixbuf-2.0/gdk-pixbuf-query-loaders
-          exit 1
 
       - name: Build GUI Release
         run: cargo build --release --bin czkawka_gui
@@ -42,7 +39,6 @@ jobs:
 
       - name: Download appimage dependiences
         run: |
-          find /usr -name gdk-pixbuf-query-loaders
           wget -c "https://raw.githubusercontent.com/linuxdeploy/linuxdeploy-plugin-gtk/fix_%2311/linuxdeploy-plugin-gtk.sh"
           wget -c "https://github.com/linuxdeploy/linuxdeploy/releases/download/continuous/linuxdeploy-x86_64.AppImage"
           chmod +x linuxdeploy-plugin-gtk.sh
