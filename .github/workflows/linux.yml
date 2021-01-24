@@ -38,6 +38,7 @@ jobs:
 
       - name: Download appimage dependiences
         run: |
+          find /usr -name gdk-pixbuf-query-loaders
           wget -c "https://raw.githubusercontent.com/linuxdeploy/linuxdeploy-plugin-gtk/fix_%2311/linuxdeploy-plugin-gtk.sh"
           wget -c "https://github.com/linuxdeploy/linuxdeploy/releases/download/continuous/linuxdeploy-x86_64.AppImage"
           chmod +x linuxdeploy-plugin-gtk.sh
